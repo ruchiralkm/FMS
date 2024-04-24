@@ -12,9 +12,15 @@
   transition: 0.2s linear;
 }
 
+body {
+  min-height: 60px;
+  background: url(image/bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
 .container {
-  background: linear-gradient(45deg, blueviolet, lightgreen);
-  padding: 15px 9%;
+  padding: 120px 9%;
   padding-bottom: 100px;
 }
 
@@ -34,7 +40,7 @@
 
 .container .box-container .box {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  border-radius: 20px;
   background: #fff;
   text-align: center;
   padding: 30px 20px;
