@@ -10,7 +10,7 @@
   <body>
     <section class="container">
       <header>Registration</header>
-      <form action="driver-signupbe.php" class="form">
+      <form action="driver-signupbe.php" class="form" method="POST" enctype="multipart/form-data">
         <!-- Name -->
         <div class="column">
           <!-- 1 -->
@@ -46,23 +46,9 @@
           <!-- Profile Picture -->
           <div class="input-box">
             <label>Profile Picture</label>
-            <input
-              type="file"
-              id="real-file"
-              name="picture"
-              accept="image/*"
-              hidden="hidden"
-            />
-            <button class="gg" id="cutom-botton">Choose Photo</button>
+            <input type="file" name="file">
 
-            <script>
-              const realFileBtn = document.getElementById("real-file");
-              const cutomBtn = document.getElementById("cutom-botton");
-
-              cutomBtn.addEventListener("click", function () {
-                realFileBtn.click();
-              });
-            </script>
+          
           </div>
         </div>
 
