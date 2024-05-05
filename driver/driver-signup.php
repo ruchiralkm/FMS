@@ -228,7 +228,7 @@
 
         <div class="signup-link">
           <p>
-            Do you have an account? <a href="driver-login.html">Login now</a>
+            Do you have an account? <a href="driver-login.php">Login now</a>
           </p>
         </div>
       </form>
