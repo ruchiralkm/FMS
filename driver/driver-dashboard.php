@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> Drop Down Sidebar Menu | CodingLab </title>
+    <title> FleetMS </title>
     <link rel="stylesheet" href="style.css">
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -54,7 +54,7 @@ if ($result->num_rows > 0) {
   <div class="sidebar close">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus'></i>
-      <span class="logo_name">CodingLab</span>
+      <span class="logo_name">FleetMS</span>
     </div>
     <ul class="nav-links">
       <li>
@@ -164,7 +164,7 @@ if ($result->num_rows > 0) {
       </div>
       <div class="name-job">
         <div class="profile_name"><?php echo $fname?></div>
-        <div class="job">Web Desginer</div>
+        <div class="job">Driver</div>
       </div>
       <a href="driver-login.php"><i class='bx bx-log-out' ></i></a>
     </div>
