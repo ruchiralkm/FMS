@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
@@ -12,7 +11,6 @@
 <body>
 
 <?php
-//-----------Designed by RuchiraLK--------//
 
 $servername = "localhost";
 $username = "root";
@@ -51,6 +49,7 @@ if ($result->num_rows > 0) {
     */
 
     ?>
+    <!-- if correct email or password -->
   <div class="sidebar close">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus'></i>
@@ -181,6 +180,8 @@ if ($result->num_rows > 0) {
 
   <script src="script.js"></script>
 
+
+  <!-- if invalid email or password -->
     <?php
     
 } else {
