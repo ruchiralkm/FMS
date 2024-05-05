@@ -166,7 +166,7 @@ if ($result->num_rows > 0) {
         <div class="profile_name"><?php echo $fname?></div>
         <div class="job">Web Desginer</div>
       </div>
-      <i class='bx bx-log-out' ></i>
+      <a href="driver-login.php"><i class='bx bx-log-out' ></i></a>
     </div>
   </li>
 </ul>
