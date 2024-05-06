@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <form action="#">
+      <form action="admin-dashboard.php" class="form" method="POST" enctype="multipart/form-data">
         <br />
         <h1>
           <img src="assets/logo.png" alt="" style="height: 80px; width: 70px" />
@@ -24,12 +24,12 @@
         <h1 style="color: #fff">Fleet<span style="color: green">MS</span></h1>
         <div class="input-box">
           <i class="fas fa-envelope icon"></i>
-          <input type="email" required />
+          <input type="text" name="username" required />
           <label>Email Address</label>
         </div>
         <div class="input-box">
           <i class="fas fa-lock icon"></i>
-          <input type="password" required />
+          <input type="password" name="password" required />
           <label>Password</label>
         </div>
 
