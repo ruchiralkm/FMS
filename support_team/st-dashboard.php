@@ -29,7 +29,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 //users = enter your table name of the database
-$sql = "SELECT * FROM driver WHERE email = '$email' AND password = '$password'";
+$sql = "SELECT * FROM support_team WHERE email = '$email' AND password = '$password'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -38,6 +38,7 @@ if ($result->num_rows > 0) {
     $fname = $row['fname'];
     $lname = $row['lname'];
     $picture = $row['picture']; // Fetch the picture path from the database
+    $position = $row['position'];
 
     
     
@@ -165,7 +166,7 @@ if ($result->num_rows > 0) {
       </div>
       <div class="name-job">
         <div class="profile_name"><?php echo $fname?></div>
-        <div class="job">Driver</div>
+        <div class="job"><?php echo $position ?></div>
       </div>
       <a href="driver-login.php"><i class='bx bx-log-out' ></i></a>
     </div>

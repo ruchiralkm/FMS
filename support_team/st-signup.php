@@ -131,7 +131,7 @@
         <div class="radio-tile-group">
           <!-- bike -->
           <div class="input-container">
-            <input id="bike" type="radio" name="vehicle[]" value="Hardware Support" />
+            <input id="bike" type="radio" name="position[]" value="Hardware Support" />
             <div class="radio-tile">
               <img src="assets/hardware.png" alt="" class="vima" style = "width:60px; height:60px"/>
               <br>
@@ -144,7 +144,7 @@
             <input
               id="threewheeler"
               type="radio"
-              name="vehicle[]"
+              name="position[]"
               value="Technical Support"
             />
             <div class="radio-tile">
@@ -156,7 +156,7 @@
 
           <!-- Customer Support -->
           <div class="input-container">
-            <input id="car" type="radio" name="vehicle[]" value="Management Support" />
+            <input id="car" type="radio" name="position[]" value="Management Support" />
             <div class="radio-tile">
               <img src="assets/customer.png" alt="" class="vima" style = "width:60px; height:60px" />
               <br>
@@ -165,7 +165,7 @@
           </div>
 
          
-          <!-- end vechicles -->
+          <!-- end support -->
         </div>
 
         <!-- button -->

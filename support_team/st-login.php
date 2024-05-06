@@ -25,12 +25,12 @@
         <h1 style="color: black">Fleet<span style="color: green">MS</span></h1>
         <div class="input-box">
           <i class="fas fa-envelope icon"></i>
-          <input type="email" required />
+          <input type="email" name="email" required />
           <label>Email Address</label>
         </div>
         <div class="input-box">
           <i class="fas fa-lock icon"></i>
-          <input type="password" required />
+          <input type="password" name="password" required />
           <label>Password</label>
         </div>
 

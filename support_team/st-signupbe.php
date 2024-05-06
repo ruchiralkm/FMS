@@ -33,10 +33,9 @@ $dob = $_REQUEST['dob'];
 $gender = $_REQUEST['gender'];
 $email = $_REQUEST['email'];
 $password = $_REQUEST['password'];
-$experience = $_REQUEST['experience'];
 
 // Handle checkboxes
-$vehicles = implode(',', $_REQUEST['vehicle']); // Convert array to comma-separated string
+$position = implode(',', $_REQUEST['position']); // Convert array to comma-separated string
 
 // Handle profile picture upload
 $targetDir = "uploads/"; // Directory where the file will be stored
@@ -52,8 +51,8 @@ if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
     $picture = ""; // Set picture to empty string or handle error as needed
 }
 
-$sql = "INSERT INTO driver (fname, lname, address, dlno, picture, mobile, dob, gender, email, password, experience, vehicle) 
-        VALUES ('$fname', '$lname', '$address', '$dlno', '$picture', '$mobile', '$dob', '$gender', '$email', '$password', '$experience', '$vehicles')";
+$sql = "INSERT INTO support_team (fname, lname, address, dlno, picture, mobile, dob, gender, email, password, position) 
+        VALUES ('$fname', '$lname', '$address', '$dlno', '$picture', '$mobile', '$dob', '$gender', '$email', '$password', '$position')";
 
 
 if (mysqli_query($conn, $sql)) {
