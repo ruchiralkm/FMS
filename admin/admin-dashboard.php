@@ -166,7 +166,7 @@ if ($result->num_rows > 0) {
         <div class="profile_name"><?php echo $username ?></div>
         <div class="job">Admin</div>
       </div>
-      <a href="driver-login.php"><i class='bx bx-log-out' ></i></a>
+      <a href="admin-login.php"><i class='bx bx-log-out' ></i></a>
     </div>
   </li>
 </ul>
@@ -186,8 +186,25 @@ if ($result->num_rows > 0) {
     <?php
     
 } else {
-    echo "Invalid email or password";
+    // echo "Invalid email or password";
 }
 
 $conn->close();
 ?>
+
+<div class="container">
+  <div class="invalidBox">
+
+    <div class="invalidImgBox">
+      <img src="assets/invalid.png" alt="" class = "invalidImg">
+    </div>
+
+    <div class="invalidWords">
+      <span class = "invalidMsg">Invalid Email or Password</span>
+      <span class = "invalidMsg2">Please Try Again</span>
+      <button><a href="admin-login.php">Login</a></button>
+    </div>
+
+  </div>
+</div>
+

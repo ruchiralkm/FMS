@@ -12,7 +12,7 @@
     />
 
     <!--css file-->
-    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="admins.css" />
   </head>
   <body>
     <div class="wrapper">
