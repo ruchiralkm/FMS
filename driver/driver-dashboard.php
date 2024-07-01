@@ -46,7 +46,13 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $fname = $row['fname'];
     $lname = $row['lname'];
+    $dlno = $row['dlno'];
     $picture = $row['picture']; // Fetch the picture path from the database
+    $mobile = $row['mobile'];
+    $dob = $row['dob'];
+    $email = $row['email'];
+    $experience = $row['experience'];
+    $vehicle = $row['vehicle'];
 
     
     
@@ -159,7 +165,7 @@ if ($result->num_rows > 0) {
       <i class='bx bx-menu' ></i>
       <!-- <span class="text">FleetMS</span> -->
     </div>
-    <h3><?php echo "Welcome $fname $lname  <br>"; ?></h3>
+    <h2><?php echo "Welcome $fname $lname  <br>"; ?></h2><br>
 
 
 
@@ -183,7 +189,25 @@ if ($result->num_rows > 0) {
 </div>
 
 <div class="settingCont" id = "setting">
-    <div class="settingBox">Setting Container</div>
+    <div class="settingBox">
+
+      <div class="settingBoxLeft">
+        <div class="profile-Img"><?php echo "<img src='$picture' width='250' height='240'>"; ?></div>
+        <button><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
+      </div>
+
+      <div class="settingBoxRight">
+        <h3>About Driver</h3><br>
+        <h4>Driver Name: <span class = "details"> <?php echo "$fname $lname"; ?></span> </h4><br>
+        <h4>Driving Licence No: <span class = "details"> <?php echo "$dlno"; ?> </h4><br>
+        <h4>Mobile No: <span class = "details"> <?php echo "$mobile"; ?> </h4><br>
+        <h4>Date of Birth: <span class = "details"> <?php echo "$dob"; ?> </h4><br>
+        <h4>Email: <span class = "details"> <?php echo "$email"; ?> </h4><br>
+        <h4>Experience: <span class = "details"> <?php echo "$experience"; ?> </h4><br>
+        <h4>Allow Vehicles: <span class = "details"> <?php echo "$vehicle"; ?> </h4><br>
+      </div>
+
+    </div>
 </div>
 
 
