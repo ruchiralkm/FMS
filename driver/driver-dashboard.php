@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title> FleetMS </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,10 +49,11 @@ if ($result->num_rows > 0) {
     */
 
     ?>
+    <!-- ********************************************* -->
     <!-- if correct email or password -->
   <div class="sidebar close">
     <div class="logo-details">
-      <i class='bx bxl-c-plus-plus'></i>
+      <img src="assets/logo.png" alt="" style="height: 40px; width: 35px; margin-left: 20px;"/>
       <span class="logo_name">FleetMS</span>
     </div>
     <ul class="nav-links">
@@ -180,13 +181,29 @@ if ($result->num_rows > 0) {
 
   <script src="script.js"></script>
 
-
+<!-- ********************************************* -->
   <!-- if invalid email or password -->
     <?php
     
 } else {
-    echo "Invalid email or password";
+    // echo "Invalid email or password";
 }
 
 $conn->close();
 ?>
+
+<div class="container">
+  <div class="invalidBox">
+
+    <div class="invalidImgBox">
+      <img src="assets/invalid.png" alt="" class = "invalidImg">
+    </div>
+
+    <div class="invalidWords">
+      <span class = "invalidMsg">Invalid Email or Password</span>
+      <span class = "invalidMsg2">Please Try Again</span>
+      <button><a href="driver-login.php">Login</a></button>
+    </div>
+
+  </div>
+</div>
