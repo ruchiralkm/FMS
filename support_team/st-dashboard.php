@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8">
     <title> FleetMS </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -168,7 +168,7 @@ if ($result->num_rows > 0) {
         <div class="profile_name"><?php echo $fname?></div>
         <div class="job"><?php echo $position ?></div>
       </div>
-      <a href="driver-login.php"><i class='bx bx-log-out' ></i></a>
+      <a href="st-login.php"><i class='bx bx-log-out' ></i></a>
     </div>
   </li>
 </ul>
@@ -188,8 +188,24 @@ if ($result->num_rows > 0) {
     <?php
     
 } else {
-    echo "Invalid email or password";
+    // echo "Invalid email or password";
 }
 
 $conn->close();
 ?>
+
+<div class="container">
+  <div class="invalidBox">
+
+    <div class="invalidImgBox">
+      <img src="assets/invalid.png" alt="" class = "invalidImg">
+    </div>
+
+    <div class="invalidWords">
+      <span class = "invalidMsg">Invalid Email or Password</span>
+      <span class = "invalidMsg2">Please Try Again</span>
+      <button><a href="st-login.php">Login</a></button>
+    </div>
+
+  </div>
+</div>

@@ -43,7 +43,9 @@
         <button type="submit" class="btn">Login</button>
 
         <div class="signup-link">
-          <p>Fleet Management System</p>
+          <p>
+            Don't have an account? <a href="st-signup.php" style = "text-decoration:none; color:white;">Signup now</a>
+          </p>
         </div>
       </form>
     </div>
