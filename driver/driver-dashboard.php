@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title> FleetMS </title>
     <link rel="stylesheet" href="styless.css">
-    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="pagess.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
      <!-- Fonts Icons -->
      <link
@@ -192,10 +194,10 @@ if ($result->num_rows > 0) {
     <div class="settingBox">
 
       <div class="settingBoxLeft">
-        <div class="profile-Img"><?php echo "<img src='$picture' width='250' height='240'>"; ?></div>
-        <button><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
+        <div class="profile-Img"><?php echo "<img src='$picture' width='250' height='240'>"; ?></div><br>
+        <a href="edit.php?email=<?php echo $email; ?>" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; Edit &nbsp;&nbsp;&nbsp;</a>
       </div>
-
+     
       <div class="settingBoxRight">
         <h3>About Driver</h3><br>
         <h4>Driver Name: <span class = "details"> <?php echo "$fname $lname"; ?></span> </h4><br>

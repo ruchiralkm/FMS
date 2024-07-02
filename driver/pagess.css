@@ -1,0 +1,63 @@
+.dashboardCont{
+    display: flex;
+    height: 100vh;
+}
+.dashboardBox{
+    width: 90%;
+    height: 70%;
+    background-color: rgb(187, 187, 187);
+}
+
+.taskCont{
+    display: flex;
+    height: 100vh;
+}
+.taskBox{
+    width: 90%;
+    height: 70%;
+    background-color: rgb(197, 32, 32);
+}
+
+.notiCont{
+    display: flex;
+    height: 100vh;
+}
+.notiBox{
+    width: 90%;
+    height: 70%;
+    background-color: rgb(0, 70, 136);
+}
+
+
+
+
+/* ************************************************************ */
+/*----------------------- Setting Page ------------------------*/
+.settingCont{
+    display: flex;
+    height: 100vh;
+}
+.settingBox{
+    display: flex;
+    width: 90%;
+    height: 70%;
+    /* background-color: rgb(168, 0, 93); */
+}
+.settingBoxLeft{
+    flex: 1;
+}
+.settingBoxRight{
+    flex: 3;
+}
+h3{
+    font-size: 2rem;
+}
+.details{
+    display: inline;
+    font-weight: 500;
+}
+
+
+
+/* ************************************************************ */
+/*----------------------- Setting-> Edit Page ------------------------*/
