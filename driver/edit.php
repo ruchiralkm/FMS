@@ -26,7 +26,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$email = $_GET['email'];
+$dlno = $_GET['dlno'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fname = $_POST['fname'];
@@ -45,9 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $target_file = $target_dir . basename($_FILES['picture']['name']);
         move_uploaded_file($_FILES['picture']['tmp_name'], $target_file);
         $picture = $target_file;
-        $sql = "UPDATE driver SET fname='$fname', lname='$lname', address ='$address', dlno='$dlno', mobile='$mobile', dob='$dob', email='$email', password='$password', experience='$experience', vehicle='$vehicle', picture='$picture' WHERE email='$email'";
+        $sql = "UPDATE driver SET fname='$fname', lname='$lname', address ='$address', dlno='$dlno', mobile='$mobile', dob='$dob', email='$email', password='$password', experience='$experience', vehicle='$vehicle', picture='$picture' WHERE dlno='$dlno'";
     } else {
-        $sql = "UPDATE driver SET fname='$fname', lname='$lname', address ='$address', dlno='$dlno', mobile='$mobile', dob='$dob', email='$email', password='$password', experience='$experience', vehicle='$vehicle' WHERE email='$email'";
+        $sql = "UPDATE driver SET fname='$fname', lname='$lname', address ='$address', dlno='$dlno', mobile='$mobile', dob='$dob', email='$email', password='$password', experience='$experience', vehicle='$vehicle' WHERE dlno='$dlno'";
     }
     
     if ($conn->query($sql) === TRUE) {
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-$sql = "SELECT * FROM driver WHERE email='$email'";
+$sql = "SELECT * FROM driver WHERE dlno='$dlno'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -78,7 +78,7 @@ if ($result->num_rows > 0) {
 <div class="editContainer">
     <header class = "header">Update Driver Information</header>
     
-    <form class = "form" action="edit.php?email=<?php echo $email; ?>" method="post" enctype="multipart/form-data">
+    <form class = "form" action="edit.php?dlno=<?php echo $dlno; ?>" method="post" enctype="multipart/form-data">
 
         <!-- Name -->
         <div class="column">

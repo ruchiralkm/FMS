@@ -299,22 +299,7 @@ body{
   font-weight: bold;
   text-align: center;
 }
-button{
-  margin-top: 20px;
-  width: 120px;
-  height: 40px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  background-color: black;
-  color: #fff;
-  border: none;
-  border-radius: 9px;
-  cursor: pointer;
-}
-a{
-  text-decoration: none;
-  color: #fff;
-}
+
 
 
 

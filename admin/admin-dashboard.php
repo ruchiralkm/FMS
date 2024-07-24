@@ -6,6 +6,17 @@
     <meta charset="UTF-8">
     <title> FleetMS </title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+
+    <!-- Fonts Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,37 +48,54 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $username = $row['username'];
     //$picture = $row['picture']; // Fetch the picture path from the database
-
-
-    
-    
-    // Display the picture if available
-    /*
-    if (!empty($picture)) {
-        echo "<img src='$picture' alt='Profile Picture' style='width: 300px; height: 300px;'>";
-    } else {
-        echo "No profile picture available.";
-    }
-    */
-
     ?>
+
     <!-- if correct email or password -->
-  <div class="sidebar close">
+    <div class="sidebar close">
     <div class="logo-details">
-      <i class='bx bxl-c-plus-plus'></i>
+      <img src="assets/logo.png" alt="" style="height: 40px; width: 35px; margin-left: 20px;"/>
       <span class="logo_name">FleetMS</span>
     </div>
     <ul class="nav-links">
+
+    <!--------------- SlideBar Pages ---------------->
+    <!----------------- Dashboard -------------------->
       <li>
-        <a href="#">
+        <a href="#" onclick="showDash()">
           <i class='bx bx-grid-alt' ></i>
           <span class="link_name">Dashboard</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Category</a></li>
+          <li><a class="link_name" href="#" onclick="showDash()">Dashboard</a></li>
         </ul>
       </li>
+
+
+      <!----------------- Drivers -------------------->
       <li>
+        <a href="#" onclick="showDriver()">
+        <i class="fa fa-user" aria-hidden="true"></i>
+          <span class="link_name">Driver</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#" onclick="showDriver()">Driver</a></li>
+        </ul>
+      </li>
+
+      <!----------------- Support Team -------------------->
+      <li>
+        <a href="#" onclick="showST()">
+        <i class="fa fa-users" aria-hidden="true"></i>
+          <span class="link_name">Support Team</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#" onclick="showST()">Support Team</a></li>
+        </ul>
+      </li>
+
+
+      <!----------------- Category -------------------->
+      <!-- <li>
         <div class="iocn-link">
           <a href="#">
             <i class='bx bx-collection' ></i>
@@ -81,103 +109,302 @@ if ($result->num_rows > 0) {
           <li><a href="#">JavaScript</a></li>
           <li><a href="#">PHP & MySQL</a></li>
         </ul>
-      </li>
+      </li> -->
+      
+
+      <!----------------- Tasks -------------------->
       <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-book-alt' ></i>
-            <span class="link_name">Posts</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Posts</a></li>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Login Form</a></li>
-          <li><a href="#">Card Design</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-pie-chart-alt-2' ></i>
-          <span class="link_name">Analytics</span>
+        <a href="#" onclick="showTasks()">
+        <i class="fa fa-list-alt" aria-hidden="true"></i>
+          <span class="link_name">Tasks</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Analytics</a></li>
+          <li><a class="link_name" href="#" onclick="showTasks()">Task</a></li>
         </ul>
       </li>
+
+
+      <!----------------- Issues -------------------->
       <li>
-        <a href="#">
-          <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Chart</span>
+        <a href="#" onclick="showIssue()">
+        <i class="fa fa-ambulance" aria-hidden="true"></i>
+          <span class="link_name">Issue</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Chart</a></li>
+          <li><a class="link_name" href="#" onclick="showIssue()">Issue</a></li>
         </ul>
       </li>
+
+
+
+      <!----------------- Notification -------------------->
       <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-plug' ></i>
-            <span class="link_name">Plugins</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Plugins</a></li>
-          <li><a href="#">UI Face</a></li>
-          <li><a href="#">Pigments</a></li>
-          <li><a href="#">Box Icons</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-compass' ></i>
-          <span class="link_name">Explore</span>
+        <a href="#" onclick="showNoti()">
+          <i class="fa fa-bell" aria-hidden="true"></i>
+          <span class="link_name" >Notification</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Explore</a></li>
+          <li><a class="link_name" href="#" onclick="showNoti()">Notification</a></li>
         </ul>
       </li>
+      
+
+      <!----------------- Setting -------------------->
       <li>
-        <a href="#">
-          <i class='bx bx-history'></i>
-          <span class="link_name">History</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">History</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
+        <a href="#" onclick="showSetting()">
           <i class='bx bx-cog' ></i>
-          <span class="link_name">Setting</span>
+          <span class="link_name setting">Setting</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Setting</a></li>
+          <li><a class="link_name setting" href="#" onclick="showSetting()">Setting</a></li>
         </ul>
       </li>
+
+
       <li>
     <div class="profile-details">
       <div class="profile-content">
         <img src="assets/admi.png" alt="profileImg">
+        <!-- <?php echo "<img src='$picture'>"; ?> -->
       </div>
       <div class="name-job">
-        <div class="profile_name"><?php echo $username ?></div>
+        <div class="profile_name"><?php echo $username?></div>
         <div class="job">Admin</div>
       </div>
       <a href="admin-login.php"><i class='bx bx-log-out' ></i></a>
     </div>
+
+
   </li>
 </ul>
   </div>
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-      <span class="text">Drop Down Sidebar</span>
+      <!-- <span class="text">FleetMS</span> -->
     </div>
-    <h1><?php echo "Login successful, welcome $username  <br>"; ?></h1>
+    <h2 style = "font-size: 1.1rem;"><?php echo "Hello, $username  <br>"; ?></h2><br>
+
+
+
+
+
+
+
+
+<!-- **************************************************************** -->
+<!----------------------------- Pages ----------------------->
+<!----------------------------- Dashboard ----------------------->
+<div class="dashboardCont" id = "dashboard">
+    <div class="dashboardBox">Dashboard Container</div>
+</div>
+
+<!----------------------------- Driver ----------------------->
+      <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname="fms";
+
+$conn = mysqli_connect($servername,$username,$password,$dbname);
+
+if(!$conn){
+	die("Connection Erro".mysqli_connect_error());
+}else{
+	
+}
+?>
+
+<?php
+
+$sql="SELECT * FROM driver";
+$result=mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result)>0){
+
+?>
+<div class="driverCont" id = "driver">
+    <div class="driverBox">
+
+
+    <div class="table">
+        <div class="table_header">
+            <p>Drivers Informations</p>
+            <div>
+                <input type="text" placeholder="Seach by driver name">
+                <button class="add_new">Search</button>
+            </div>
+        </div>
+
+        <div class="table_section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Profile Picture</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Driving License NO</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Experience</th>
+                        <th>Vehicle</th>
+                    </tr>
+                </thead>
+                <?php
+
+                $i=0;
+                while($row=mysqli_fetch_array($result)){
+
+                ?>
+
+                <tbody>
+                    <tr>
+                        <td> <?php  echo $row["picture"];  ?> </td>
+                        <td> <?php echo $row["fname"];  ?> <?php echo $row["lname"];  ?> </td>
+                        <td> <?php echo $row["address"];  ?> </td>
+                        <td> <?php echo $row["dlno"];  ?> </td>
+                        <td> <?php echo $row["mobile"];  ?> </td>
+                        <td> <?php echo $row["email"];  ?> </td>
+                        <td> <?php echo $row["experience"];  ?> </td>
+                        <td> <?php echo $row["vehicle"];  ?> </td>
+                    </tr>
+
+                      <?php
+                      $i++;
+                      }
+                      ?>
+
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    </div>
+</div>
+<?php
+}
+
+else{
+  ?>
+  <h5 style = "margin-left:-600px;"><?php echo "No classes at this movement"; ?></h5>
+
+  <?php
+}
+
+?>
+
+<!----------------------------- Support Team ----------------------->
+<div class="supportteamCont" id = "supportteam">
+    <div class="supportteamBox">Support Team Container</div>
+</div>
+
+<!----------------------------- Task ----------------------->
+<div class="taskCont" id = "tasks">
+    <div class="taskBox">Task Container</div>
+</div>
+
+<!----------------------------- Issue ----------------------->
+<div class="issueCont" id = "issue">
+    <div class="issueBox">Issue Container
+
+    </div>
+</div>
+
+<!----------------------------- Notification ----------------------->
+<div class="notiCont" id = "notification">
+    <div class="notiBox">Notification Container</div>
+</div>
+
+
+
+<!----------------------------- Setting ----------------------->
+<div class="settingCont" id = "setting">
+    <div class="settingBox">Setting Container</div>
+</div>
+
+
+
+
+
+    <script>
+    function showDash() {
+      document.getElementById('dashboard').style.display = 'block';
+      document.getElementById('driver').style.display = 'none';
+      document.getElementById('supportteam').style.display = 'none';
+      document.getElementById('tasks').style.display = 'none';
+      document.getElementById('issue').style.display = 'none';
+      document.getElementById('notification').style.display = 'none';
+      document.getElementById('setting').style.display = 'none';
+      
+    }
+
+    function showDriver() {
+      document.getElementById('driver').style.display = 'block';
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('supportteam').style.display = 'none';
+      document.getElementById('tasks').style.display = 'none';
+      document.getElementById('issue').style.display = 'none';
+      document.getElementById('notification').style.display = 'none';
+      document.getElementById('setting').style.display = 'none';
+      
+    }
+
+    function showST() {
+      document.getElementById('supportteam').style.display = 'block';
+      document.getElementById('driver').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('tasks').style.display = 'none';
+      document.getElementById('issue').style.display = 'none';
+      document.getElementById('notification').style.display = 'none';
+      document.getElementById('setting').style.display = 'none';
+      
+    }
+
+    function showTasks() {
+      document.getElementById('tasks').style.display = 'block';
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('driver').style.display = 'none';
+      document.getElementById('supportteam').style.display = 'none';
+      document.getElementById('issue').style.display = 'none';
+      document.getElementById('notification').style.display = 'none';
+      document.getElementById('setting').style.display = 'none';
+    }
+
+    function showNoti() {
+      document.getElementById('notification').style.display = 'block';
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('driver').style.display = 'none';
+      document.getElementById('supportteam').style.display = 'none';
+      document.getElementById('tasks').style.display = 'none';
+      document.getElementById('issue').style.display = 'none';
+      document.getElementById('setting').style.display = 'none';
+    }
+
+    function showIssue() {
+      document.getElementById('issue').style.display = 'block';
+      document.getElementById('notification').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('driver').style.display = 'none';
+      document.getElementById('supportteam').style.display = 'none';
+      document.getElementById('tasks').style.display = 'none';
+      document.getElementById('setting').style.display = 'none';
+    }
+
+    function showSetting() {
+      document.getElementById('setting').style.display = 'block';
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('driver').style.display = 'none';
+      document.getElementById('supportteam').style.display = 'none';
+      document.getElementById('tasks').style.display = 'none';
+      document.getElementById('issue').style.display = 'none';
+      document.getElementById('notification').style.display = 'none';
+    }
+    </script>
+
   </section>
+
 
   <script src="script.js"></script>
 

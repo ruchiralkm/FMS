@@ -1,0 +1,173 @@
+h2{
+    font-size: 1.2rem;
+}
+  
+  /* ************************************************************ */
+  /*----------------------- Dashboard Page ------------------------*/
+  .dashboardCont{
+      display: flex;
+      height: 100vh;
+    }
+  .dashboardBox{
+      width: 90%;
+      height: 70%;
+      background-color: rgb(187, 187, 187);
+    }
+
+    /* ************************************************************ */
+  /*----------------------- Driver Page ------------------------*/
+  .driverCont{
+    display: flex;
+    height: 100vh;
+}
+.driverBox{
+    width: 96%;
+    height: 70%;
+    /* background-color: rgb(42, 114, 0); */
+}
+
+.table{
+    width: 100%;
+}
+.table_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(22, 172, 30);
+}
+.table_header p{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+button{
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px;
+}
+.table_section{
+    height: 500px;
+    overflow: auto;
+}
+table{
+    width: 100%;
+    table-layout: fixed;
+    min-width: 900px;
+    border-collapse: collapse;
+}
+thead th{
+    position: sticky;
+    top: 0;
+    background-color: #282644;
+    color: #fff;
+    font-size: 15px;
+}
+tr{
+    font-weight: 500;
+}
+
+th,td{
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 20px;
+    word-break: break-all;
+    text-align: center;
+}
+
+td img{
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #ccc;
+}
+tr{
+    background-color: #ffffff;
+}
+tr:hover{
+    background-color: #e6e6e6;
+}
+::-webkit-scrollbar{
+    height: 5px;
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+    /* ************************************************************ */
+  /*----------------------- Support Team Page ------------------------*/
+  .supportteamCont{
+    display: flex;
+    height: 100vh;
+}
+.supportteamBox{
+    width: 90%;
+    height: 70%;
+    background-color: rgb(228, 255, 73);
+}
+ 
+  
+  /* ************************************************************ */
+  /*----------------------- Task Page ------------------------*/
+  .taskCont{
+      display: flex;
+      height: 100vh;
+  }
+  .taskBox{
+      width: 90%;
+      height: 70%;
+      background-color: rgb(197, 32, 32);
+  }
+  
+  
+  /* ************************************************************ */
+  /*----------------------- Issue Page ------------------------*/
+  .issueCont{
+      display: flex;
+      height: 100vh;
+  }
+  .issueBox{
+      width: 90%;
+      height: 70%;
+      background-color: rgb(27, 165, 245);
+  }
+
+  /* ************************************************************ */
+  /*----------------------- Notification Page ------------------------*/
+  .notiCont{
+      display: flex;
+      height: 100vh;
+  }
+  .notiBox{
+      width: 90%;
+      height: 70%;
+      background-color: rgb(0, 70, 136);
+  }
+  
+  
+  
+  
+  /* ************************************************************ */
+  /*----------------------- Setting Page ------------------------*/
+  .settingCont{
+      display: flex;
+      height: 100vh;
+  }
+  .settingBox{
+      display: flex;
+      width: 90%;
+      height: 70%;
+      background-color: rgb(168, 0, 93);
+  }
+  .settingBoxLeft{
+      flex: 1;
+  }
+  .settingBoxRight{
+      flex: 3;
+  }
+ 

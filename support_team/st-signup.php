@@ -35,10 +35,10 @@
         <div class="column">
           <!-- Licence -->
           <div class="input-box">
-            <label>Driving Licence Number</label>
+            <label>NIC Number</label>
             <input
               type="number"
-              placeholder="Enter Licence Number"
+              placeholder="Enter NIC Number"
               name="dlno"
             />
           </div>
