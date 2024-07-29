@@ -288,7 +288,7 @@ if(mysqli_num_rows($result)>0){
 
 else{
   ?>
-  <h5 style = "margin-left:-600px;"><?php echo "No classes at this movement"; ?></h5>
+  <h5 style = "margin-left:-600px;"><?php echo "No drivers at this movement"; ?></h5>
 
   <?php
 }
@@ -296,9 +296,99 @@ else{
 ?>
 
 <!----------------------------- Support Team ----------------------->
+      <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname="fms";
+
+$conn = mysqli_connect($servername,$username,$password,$dbname);
+
+if(!$conn){
+	die("Connection Erro".mysqli_connect_error());
+}else{
+	
+}
+?>
+
+<?php
+
+$sql="SELECT * FROM support_team";
+$result=mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result)>0){
+
+?>
+
+
 <div class="supportteamCont" id = "supportteam">
-    <div class="supportteamBox">Support Team Container</div>
+    <div class="supportteamBox">
+
+
+    <div class="table">
+        <div class="table_header">
+            <p>Drivers Informations</p>
+            <div>
+                <input type="text" placeholder="Seach by driver name">
+                <button class="add_new">Search</button>
+            </div>
+        </div>
+
+        <div class="table_section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Profile Picture</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>NIC No</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Position</th>
+                    </tr>
+                </thead>
+                <?php
+
+                $i=0;
+                while($row=mysqli_fetch_array($result)){
+
+                ?>
+
+                <tbody>
+                    <tr>
+                        <td> <?php  echo $row["picture"];  ?> </td>
+                        <td> <?php echo $row["fname"];  ?> <?php echo $row["lname"];  ?> </td>
+                        <td> <?php echo $row["address"];  ?> </td>
+                        <td> <?php echo $row["dlno"];  ?> </td>
+                        <td> <?php echo $row["mobile"];  ?> </td>
+                        <td> <?php echo $row["email"];  ?> </td>
+                        <td> <?php echo $row["position"];  ?> </td>
+                    </tr>
+
+                      <?php
+                      $i++;
+                      }
+                      ?>
+
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    </div>
 </div>
+<?php
+}
+
+else{
+  ?>
+  <h5 style = "margin-left:-600px;"><?php echo "No drivers at this movement"; ?></h5>
+
+  <?php
+}
+
+?>
 
 <!----------------------------- Task ----------------------->
 <div class="taskCont" id = "tasks">
@@ -306,11 +396,98 @@ else{
 </div>
 
 <!----------------------------- Issue ----------------------->
+      <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname="fms";
+
+$conn = mysqli_connect($servername,$username,$password,$dbname);
+
+if(!$conn){
+	die("Connection Erro".mysqli_connect_error());
+}else{
+	
+}
+?>
+
+<?php
+
+$sql="SELECT * FROM issue";
+$result=mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result)>0){
+
+?>
+
+
 <div class="issueCont" id = "issue">
-    <div class="issueBox">Issue Container
+    <div class="issueBox">
+
+
+        <div class="table">
+        <div class="table_header">
+            <p>Issues Informations</p>
+            <div>
+                <input type="text" placeholder="Seach by driver name">
+                <button class="add_new">Search</button>
+            </div>
+        </div>
+
+        <div class="table_section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Driving License No</th>
+                        <th>Issue</th>
+                        <th>Support Team</th>
+                        <th>Issue Photo</th>
+                    </tr>
+                </thead>
+                <?php
+
+                $i=0;
+                while($row=mysqli_fetch_array($result)){
+
+                ?>
+
+                <tbody>
+                    <tr>
+                        <td> <?php echo $row["fname"];  ?> </td>
+                        <td> <?php echo $row["dlno"];  ?> </td>
+                        <td> <?php echo $row["issue"];  ?> </td>
+                        <td> <?php echo $row["supportteam"];  ?> </td>
+                        <td> <?php  echo $row["issuepic"];  ?> </td>
+                    </tr>
+
+                      <?php
+                      $i++;
+                      }
+                      ?>
+
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 
     </div>
 </div>
+
+
+<?php
+}
+
+else{
+  ?>
+  <h5 style = "margin-left:-600px;"><?php echo "No drivers at this movement"; ?></h5>
+
+  <?php
+}
+
+?>
 
 <!----------------------------- Notification ----------------------->
 <div class="notiCont" id = "notification">

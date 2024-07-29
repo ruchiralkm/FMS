@@ -1,11 +1,23 @@
-<!-- Same driver-dashbord.php --- not edited -->
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <title> FleetMS </title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="pagesxs.css">
+    <link rel="stylesheet" href="pages.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+     <!-- Fonts Icons -->
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +49,11 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $fname = $row['fname'];
     $lname = $row['lname'];
+    $dlno = $row['dlno'];
     $picture = $row['picture']; // Fetch the picture path from the database
+    $mobile = $row['mobile'];
+    $dob = $row['dob'];
+    $email = $row['email'];
     $position = $row['position'];
 
     
@@ -52,23 +68,30 @@ if ($result->num_rows > 0) {
     */
 
     ?>
+    <!-- ********************************************* -->
     <!-- if correct email or password -->
   <div class="sidebar close">
     <div class="logo-details">
-      <i class='bx bxl-c-plus-plus'></i>
+      <img src="assets/logo.png" alt="" style="height: 40px; width: 35px; margin-left: 20px;"/>
       <span class="logo_name">FleetMS</span>
     </div>
     <ul class="nav-links">
+
+    <!--------------- SlideBar Pages ---------------->
+    <!----------------- Dashboard -------------------->
       <li>
-        <a href="#">
+        <a href="#" onclick="showDash()">
           <i class='bx bx-grid-alt' ></i>
           <span class="link_name">Dashboard</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Category</a></li>
+          <li><a class="link_name" href="#" onclick="showDash()">Dashboard</a></li>
         </ul>
       </li>
-      <li>
+
+
+      <!----------------- Category -------------------->
+      <!-- <li>
         <div class="iocn-link">
           <a href="#">
             <i class='bx bx-collection' ></i>
@@ -82,82 +105,58 @@ if ($result->num_rows > 0) {
           <li><a href="#">JavaScript</a></li>
           <li><a href="#">PHP & MySQL</a></li>
         </ul>
-      </li>
+      </li> -->
+      
+
+      <!----------------- Tasks -------------------->
       <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-book-alt' ></i>
-            <span class="link_name">Posts</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Posts</a></li>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Login Form</a></li>
-          <li><a href="#">Card Design</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-pie-chart-alt-2' ></i>
-          <span class="link_name">Analytics</span>
+        <a href="#" onclick="showTasks()">
+        <i class="fa fa-list-alt" aria-hidden="true"></i>
+          <span class="link_name">Tasks</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Analytics</a></li>
+          <li><a class="link_name" href="#" onclick="showTasks()">Task</a></li>
         </ul>
       </li>
+
+
+      <!----------------- Issues -------------------->
       <li>
-        <a href="#">
-          <i class='bx bx-line-chart' ></i>
-          <span class="link_name">Chart</span>
+        <a href="#" onclick="showIssue()">
+        <i class="fa fa-ambulance" aria-hidden="true"></i>
+          <span class="link_name">Issue</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Chart</a></li>
+          <li><a class="link_name" href="#" onclick="showIssue()">Issue</a></li>
         </ul>
       </li>
+
+
+
+      <!----------------- Notification -------------------->
       <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-plug' ></i>
-            <span class="link_name">Plugins</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Plugins</a></li>
-          <li><a href="#">UI Face</a></li>
-          <li><a href="#">Pigments</a></li>
-          <li><a href="#">Box Icons</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-compass' ></i>
-          <span class="link_name">Explore</span>
+        <a href="#" onclick="showNoti()">
+          <i class="fa fa-bell" aria-hidden="true"></i>
+          <span class="link_name" >Notification</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Explore</a></li>
+          <li><a class="link_name" href="#" onclick="showNoti()">Notification</a></li>
         </ul>
       </li>
+      
+
+      <!----------------- Setting -------------------->
       <li>
-        <a href="#">
-          <i class='bx bx-history'></i>
-          <span class="link_name">History</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">History</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#">
+        <a href="#" onclick="showSetting()">
           <i class='bx bx-cog' ></i>
-          <span class="link_name">Setting</span>
+          <span class="link_name setting">Setting</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Setting</a></li>
+          <li><a class="link_name setting" href="#" onclick="showSetting()">Setting</a></li>
         </ul>
       </li>
+
+
       <li>
     <div class="profile-details">
       <div class="profile-content">
@@ -166,24 +165,221 @@ if ($result->num_rows > 0) {
       </div>
       <div class="name-job">
         <div class="profile_name"><?php echo $fname?></div>
-        <div class="job"><?php echo $position ?></div>
+        <div class="job">Support Team</div>
       </div>
       <a href="st-login.php"><i class='bx bx-log-out' ></i></a>
     </div>
+
+
   </li>
 </ul>
   </div>
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu' ></i>
-      <span class="text">Drop Down Sidebar</span>
+      <!-- <span class="text">FleetMS</span> -->
     </div>
-    <h1><?php echo "Login successful, welcome $fname $lname  <br>"; ?></h1>
+    <h2 style = "font-size: 1.1rem;"><?php echo "Hello, $fname $lname  <br>"; ?></h2><br>
+
+
+
+
+
+
+
+
+<!-- **************************************************************** -->
+<!----------------------------- Pages ----------------------->
+<!----------------------------- Dashboard ----------------------->
+<div class="dashboardCont" id = "dashboard">
+    <div class="dashboardBox">Dashboard Container</div>
+</div>
+
+<!----------------------------- Task ----------------------->
+<div class="taskCont" id = "tasks">
+    <div class="taskBox">Task Container</div>
+</div>
+
+<!----------------------------- Issue ----------------------->
+      <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname="fms";
+
+$conn = mysqli_connect($servername,$username,$password,$dbname);
+
+if(!$conn){
+	die("Connection Erro".mysqli_connect_error());
+}else{
+	
+}
+?>
+
+<?php
+
+$sql="SELECT * FROM issue";
+$result=mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result)>0){
+
+?>
+
+
+<div class="issueCont" id = "issue">
+    <div class="issueBox">
+
+
+        <div class="table">
+        <div class="table_header">
+            <p>Issues Informations</p>
+            <div>
+                <input type="text" placeholder="Seach by driver name">
+                <button class="add_new">Search</button>
+            </div>
+        </div>
+
+        <div class="table_section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Driving License No</th>
+                        <th>Issue</th>
+                        <th>Support Team</th>
+                        <th>Issue Photo</th>
+                    </tr>
+                </thead>
+                <?php
+
+                $i=0;
+                while($row=mysqli_fetch_array($result)){
+
+                ?>
+
+                <tbody>
+                    <tr>
+                        <td> <?php echo $row["fname"];  ?> </td>
+                        <td> <?php echo $row["dlno"];  ?> </td>
+                        <td> <?php echo $row["issue"];  ?> </td>
+                        <td> <?php echo $row["supportteam"];  ?> </td>
+                        <td> <?php  echo $row["issuepic"];  ?> </td>
+                    </tr>
+
+                      <?php
+                      $i++;
+                      }
+                      ?>
+
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    </div>
+</div>
+
+
+<?php
+}
+
+else{
+  ?>
+  <h5 style = "margin-left:-600px;"><?php echo "No drivers at this movement"; ?></h5>
+
+  <?php
+}
+
+?>
+
+
+<!----------------------------- Notification ----------------------->
+<div class="notiCont" id = "notification">
+    <div class="notiBox">Notification Container</div>
+</div>
+
+
+
+<!----------------------------- Setting ----------------------->
+<div class="settingCont" id = "setting">
+    <div class="settingBox">
+
+      <div class="settingBoxLeft">
+        <div class="profile-Img"><?php echo "<img src='$picture' width='250' height='240'>"; ?></div><br>
+        <a href="edit.php?dlno=<?php echo $dlno; ?>" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; Edit &nbsp;&nbsp;&nbsp;</a>
+      </div>
+     
+      <div class="settingBoxRight">
+        <h3>Support Team Member Informations</h3><br>
+        <h4>Name: <span class = "details"> <?php echo "$fname $lname"; ?></span> </h4><br>
+        <h4>NIC No: <span class = "details"> <?php echo "$dlno"; ?> </h4><br>
+        <h4>Mobile No: <span class = "details"> <?php echo "$mobile"; ?> </h4><br>
+        <h4>Date of Birth: <span class = "details"> <?php echo "$dob"; ?> </h4><br>
+        <h4>Email: <span class = "details"> <?php echo "$email"; ?> </h4><br>
+        <h4>Position: <span class = "details"> <?php echo "$position"; ?> </h4><br>
+      </div>
+
+    </div>
+</div>
+
+
+
+
+
+    <script>
+    function showDash() {
+      document.getElementById('dashboard').style.display = 'block';
+      document.getElementById('tasks').style.display = 'none';
+      document.getElementById('issue').style.display = 'none';
+      document.getElementById('notification').style.display = 'none';
+      document.getElementById('setting').style.display = 'none';
+      
+    }
+
+    function showTasks() {
+      document.getElementById('tasks').style.display = 'block';
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('issue').style.display = 'none';
+      document.getElementById('notification').style.display = 'none';
+      document.getElementById('setting').style.display = 'none';
+    }
+
+    function showNoti() {
+      document.getElementById('notification').style.display = 'block';
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('tasks').style.display = 'none';
+      document.getElementById('issue').style.display = 'none';
+      document.getElementById('setting').style.display = 'none';
+    }
+
+    function showIssue() {
+      document.getElementById('issue').style.display = 'block';
+      document.getElementById('notification').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('tasks').style.display = 'none';
+      document.getElementById('setting').style.display = 'none';
+    }
+
+    function showSetting() {
+      document.getElementById('setting').style.display = 'block';
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('tasks').style.display = 'none';
+      document.getElementById('issue').style.display = 'none';
+      document.getElementById('notification').style.display = 'none';
+    }
+    </script>
+
   </section>
+
 
   <script src="script.js"></script>
 
 
+
+
+<!-- ********************************************* -->
   <!-- if invalid email or password -->
     <?php
     
@@ -204,8 +400,24 @@ $conn->close();
     <div class="invalidWords">
       <span class = "invalidMsg">Invalid Email or Password</span>
       <span class = "invalidMsg2">Please Try Again</span>
-      <button><a href="st-login.php">Login</a></button>
+      <button
+      style = "margin-top: 20px;
+      width: 120px;
+      height: 40px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      background-color: black;
+      color: #fff;
+      border: none;
+      border-radius: 9px;
+      cursor: pointer;"
+      >
+      <a href="driver-login.php" style = "text-decoration: none; color: #fff;">
+        Login</a></button>
     </div>
 
   </div>
 </div>
+
+</body>
+</HTML>

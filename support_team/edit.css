@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    /* background: url(assets/bg2.jpg); */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .editContainer {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .editContainer header {
+    font-size: 1.8rem;
+    color: rgb(36, 0, 102);
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .editContainer .form {
+    margin-top: 10px;
+  }
+  
+  .form .input-box {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .input-box label {
+    color: black;
+    font-weight: 550;
+  }
+  .form-group{
+    font-weight: 550;
+  }
+  
+  .form .input-box input {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+  }
+  
+  .input-box input:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .form .column {
+    display: flex;
+    column-gap: 15px;
+  }
+  
+  .form .gender-box {
+    margin-top: 20px;
+  }
+  
+  .gender-box h3 {
+    color: black;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  
+  .form :where(.gender-option, .gender) {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    flex-wrap: wrap;
+  }
+  
+  .form .gender {
+    column-gap: 5px;
+  }
+  
+  .gender input {
+    accent-color: #0cc652;
+  }
+  
+  .form :where(.gender input, .gender label) {
+    cursor: pointer;
+  }
+  
+  .gender label {
+    color: #707070;
+  }
+  
+  .form .btn1 {
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 6px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 400;
+    background-color: #00a941;
+    transition: all 0.2s ease;
+  }
+  
+  .form .btn1:hover {
+    background-color: #038033;
+  }
+
+  .form .btn2 {
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 6px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 400;
+    background-color: #5c5c5c;
+    transition: all 0.2s ease;
+  }
+
+  .form .btn2:hover {
+    background-color: #2c2c2c;
+  }
+  
+  #cutom-botton {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+    cursor: pointer;
+  }
+  
+  .signup-link {
+    font-size: 0.9em;
+    color: #000;
+    text-align: center;
+    margin: 25px 0 10px;
+  }
+  
+  .signup-link a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 500px) {
+    .form .column {
+      flex-wrap: wrap;
+    }
+    .form :where(.gender-option, .gender) {
+      row-gap: 15px;
+    }
+  }
+  
+  /* vechicle */
+  :root {
+    --primary-color: #0cc652;
+  }
+  .radio-tile-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* box */
+  .input-container {
+    position: relative;
+    height: 8rem;
+    width: 8rem;
+    margin: 0.5rem;
+  }
+  
+  .input-container input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+  }
+  
+  .input-container .radio-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    transition: all 300ms ease;
+  }
+  
+  .input-container ion-icon {
+    color: var(--primary-color);
+    font-size: 3rem;
+  }
+  /* label font */
+  .input-container label {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  input:checked + .radio-tile {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 12px var(--primary-color);
+    transform: scale(1.1);
+  }
+  
+  input:hover + .radio-tile {
+    box-shadow: 0 0 12px var(--primary-color);
+  }
+  
+  input:checked + .radio-tile ion-icon,
+  input:checked + .radio-tile label {
+    color: white;
+  }
+  
+  .vima {
+    width: 80px;
+    height: 60px;
+  }
+  
