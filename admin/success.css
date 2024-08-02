@@ -31,6 +31,7 @@ body {
   justify-content: center;
   margin-top: 40px;
 }
+
 .container {
   position: relative;
   opacity: 0;
@@ -44,6 +45,7 @@ body {
     transform: translateX(0%);
   }
 }
+
 .invalidImg {
   width: 120px;
   height: 120px;

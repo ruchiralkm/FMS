@@ -25,7 +25,7 @@
         <div class="input-box">
           <i class="fas fa-envelope icon"></i>
           <input type="text" name="username" required />
-          <label>Email Address</label>
+          <label>Username</label>
         </div>
         <div class="input-box">
           <i class="fas fa-lock icon"></i>

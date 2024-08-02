@@ -110,6 +110,17 @@ if ($result->num_rows > 0) {
           <li><a href="#">PHP & MySQL</a></li>
         </ul>
       </li> -->
+
+      <!----------------- Vehicle -------------------->
+      <li>
+        <a href="#" onclick="showVehicles()">
+        <i class="fa fa-car" aria-hidden="true"></i>
+          <span class="link_name">Vehicles</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#" onclick="showTasks()">Vehicles</a></li>
+        </ul>
+      </li>
       
 
       <!----------------- Tasks -------------------->
@@ -196,7 +207,7 @@ if ($result->num_rows > 0) {
 <!----------------------------- Pages ----------------------->
 <!----------------------------- Dashboard ----------------------->
 <div class="dashboardCont" id = "dashboard">
-    <div class="dashboardBox">Dashboard Container</div>
+    <div class="dashboardBox"><h1>Dashboard</h1></div>
 </div>
 
 <!----------------------------- Driver ----------------------->
@@ -231,7 +242,7 @@ if(mysqli_num_rows($result)>0){
         <div class="table_header">
             <p>Drivers Informations</p>
             <div>
-                <input type="text" placeholder="Seach by driver name">
+                <input type="text" placeholder="Seach by driver name" class = "searchBoxx">
                 <button class="add_new">Search</button>
             </div>
         </div>
@@ -246,7 +257,7 @@ if(mysqli_num_rows($result)>0){
                         <th>Driving License NO</th>
                         <th>Mobile</th>
                         <th>Email</th>
-                        <th>Experience</th>
+                        <th>Experience(Years)</th>
                         <th>Vehicle</th>
                     </tr>
                 </thead>
@@ -259,7 +270,7 @@ if(mysqli_num_rows($result)>0){
 
                 <tbody>
                     <tr>
-                        <td> <?php  echo $row["picture"];  ?> </td>
+                        <td> <img src="../driver/<?php echo htmlspecialchars($row['picture']); ?>"></td>
                         <td> <?php echo $row["fname"];  ?> <?php echo $row["lname"];  ?> </td>
                         <td> <?php echo $row["address"];  ?> </td>
                         <td> <?php echo $row["dlno"];  ?> </td>
@@ -327,9 +338,9 @@ if(mysqli_num_rows($result)>0){
 
     <div class="table">
         <div class="table_header">
-            <p>Drivers Informations</p>
+            <p>Support Team Informations</p>
             <div>
-                <input type="text" placeholder="Seach by driver name">
+                <input type="text" placeholder="Seach by member name" class = "searchBoxx">
                 <button class="add_new">Search</button>
             </div>
         </div>
@@ -356,7 +367,7 @@ if(mysqli_num_rows($result)>0){
 
                 <tbody>
                     <tr>
-                        <td> <?php  echo $row["picture"];  ?> </td>
+                        <td> <img src="../support_team/<?php echo htmlspecialchars($row['picture']); ?>"></td>
                         <td> <?php echo $row["fname"];  ?> <?php echo $row["lname"];  ?> </td>
                         <td> <?php echo $row["address"];  ?> </td>
                         <td> <?php echo $row["dlno"];  ?> </td>
@@ -383,16 +394,148 @@ if(mysqli_num_rows($result)>0){
 
 else{
   ?>
-  <h5 style = "margin-left:-600px;"><?php echo "No drivers at this movement"; ?></h5>
+  <h5 style = "margin-left:-600px;"><?php echo "No suppot team member at this movement"; ?></h5>
 
   <?php
 }
 
 ?>
 
+
+
+<!----------------------------- Vehicles ----------------------->
+      <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname="fms";
+
+$conn = mysqli_connect($servername,$username,$password,$dbname);
+
+if(!$conn){
+	die("Connection Erro".mysqli_connect_error());
+}else{
+	
+}
+?>
+
+<?php
+
+$sql="SELECT * FROM vehicles";
+$result=mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result)>0){
+
+?>
+
+<!------------ Add Vehicles ------------>
+<div class="vehiclesCont" id = "vehicles">
+
+    <div class="vehiclesBox1">
+      <section class="container2">
+      <form action="vehiclebe.php" class="form" method="POST" enctype="multipart/form-data">
+        <!-- Vehicle -->
+        <div class="column">
+          <!-- 1 -->
+          <div class="input-box">
+            <label>Vehicle No</label>
+            <input type="text" name="vno" placeholder = "Enter Vehicle No"  required/>
+          </div>
+          <!-- 2 -->
+          <div class="input-box">
+            <label>Vehicle Brand</label>
+            <input type="text" name="vbrand" placeholder = "Enter Vehicle Brand" required/>
+          </div>
+
+          <!-- 3 -->
+          <div class="input-box">
+            <label>Vehicle Model</label>
+            <input type="text" name="vmodel" placeholder = "Enter Vehicle Model" required/>
+          </div>
+
+          <!-- Upload Picture -->
+          <div class="input-box">
+            <label>Vehicle Picture</label><br>
+            
+            <label class="custom-file-upload">
+              <input type="file" name="file">
+              Choose File
+            </label>
+          </div>
+            <!-- button -->
+          <button type="submit" class="btn">Add Vehicle</button>
+        </div>
+
+        
+      </form>
+      </section>
+    </div>
+
+<!------------ Show Vehicles Table ------------>
+    <div class="vehiclesBox2">
+      <div class="table">
+        <div class="table_header">
+            <p>Vehicles Informations</p>
+            <div>
+                <input type="text" placeholder="Seach by Vehicle No" class = "searchBoxx">
+                <button class="add_new">Search</button>
+            </div>
+        </div>
+
+        <div class="table_section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vehicle Picture</th>
+                        <th>Vehicle No</th>
+                        <th>Vehicle Brand</th>
+                        <th>Vehicle Model</th>
+                    </tr>
+                </thead>
+                <?php
+
+                $i=0;
+                while($row=mysqli_fetch_array($result)){
+
+                ?>
+
+                <tbody>
+                    <tr>
+                        <td> <img src="<?php echo htmlspecialchars($row['vpicture']); ?>" style = "border-radius: 10%; height: 100px; width: 100px;"></td> 
+                        <td> <?php echo $row["vno"];  ?> </td>
+                        <td> <?php echo $row["vbrand"];  ?> </td>
+                        <td> <?php echo $row["vmodel"];  ?> </td>
+                    </tr>
+
+                      <?php
+                      $i++;
+                      }
+                      ?>
+
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    </div>
+</div>
+<?php
+}
+
+else{
+  ?>
+  <h5 style = "margin-left:-600px;"><?php echo "No suppot team member at this movement"; ?></h5>
+
+  <?php
+}
+
+?>
+
+
 <!----------------------------- Task ----------------------->
 <div class="taskCont" id = "tasks">
-    <div class="taskBox">Task Container</div>
+    <div class="taskBox"><h1>Tasks</h1></div>
 </div>
 
 <!----------------------------- Issue ----------------------->
@@ -429,7 +572,7 @@ if(mysqli_num_rows($result)>0){
         <div class="table_header">
             <p>Issues Informations</p>
             <div>
-                <input type="text" placeholder="Seach by driver name">
+                <input type="text" placeholder="Seach by issue" class = "searchBoxx">
                 <button class="add_new">Search</button>
             </div>
         </div>
@@ -458,7 +601,7 @@ if(mysqli_num_rows($result)>0){
                         <td> <?php echo $row["dlno"];  ?> </td>
                         <td> <?php echo $row["issue"];  ?> </td>
                         <td> <?php echo $row["supportteam"];  ?> </td>
-                        <td> <?php  echo $row["issuepic"];  ?> </td>
+                        <td> <img src="../driver/<?php echo htmlspecialchars($row['issuepic']); ?>" style = "border-radius: 10%; height: 140px; width: 140px;"></td>
                     </tr>
 
                       <?php
@@ -491,14 +634,14 @@ else{
 
 <!----------------------------- Notification ----------------------->
 <div class="notiCont" id = "notification">
-    <div class="notiBox">Notification Container</div>
+    <div class="notiBox"><h1>Notification</h1></div>
 </div>
 
 
 
 <!----------------------------- Setting ----------------------->
 <div class="settingCont" id = "setting">
-    <div class="settingBox">Setting Container</div>
+    <div class="settingBox"><h1>Setting</h1></div>
 </div>
 
 
@@ -510,6 +653,7 @@ else{
       document.getElementById('dashboard').style.display = 'block';
       document.getElementById('driver').style.display = 'none';
       document.getElementById('supportteam').style.display = 'none';
+      document.getElementById('vehicles').style.display = 'none';
       document.getElementById('tasks').style.display = 'none';
       document.getElementById('issue').style.display = 'none';
       document.getElementById('notification').style.display = 'none';
@@ -521,6 +665,7 @@ else{
       document.getElementById('driver').style.display = 'block';
       document.getElementById('dashboard').style.display = 'none';
       document.getElementById('supportteam').style.display = 'none';
+      document.getElementById('vehicles').style.display = 'none';
       document.getElementById('tasks').style.display = 'none';
       document.getElementById('issue').style.display = 'none';
       document.getElementById('notification').style.display = 'none';
@@ -532,6 +677,7 @@ else{
       document.getElementById('supportteam').style.display = 'block';
       document.getElementById('driver').style.display = 'none';
       document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('vehicles').style.display = 'none';
       document.getElementById('tasks').style.display = 'none';
       document.getElementById('issue').style.display = 'none';
       document.getElementById('notification').style.display = 'none';
@@ -539,11 +685,23 @@ else{
       
     }
 
+    function showVehicles() {
+      document.getElementById('vehicles').style.display = 'block';
+      document.getElementById('tasks').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'none';
+      document.getElementById('driver').style.display = 'none';
+      document.getElementById('supportteam').style.display = 'none';
+      document.getElementById('issue').style.display = 'none';
+      document.getElementById('notification').style.display = 'none';
+      document.getElementById('setting').style.display = 'none';
+    }
+
     function showTasks() {
       document.getElementById('tasks').style.display = 'block';
       document.getElementById('dashboard').style.display = 'none';
       document.getElementById('driver').style.display = 'none';
       document.getElementById('supportteam').style.display = 'none';
+      document.getElementById('vehicles').style.display = 'none';
       document.getElementById('issue').style.display = 'none';
       document.getElementById('notification').style.display = 'none';
       document.getElementById('setting').style.display = 'none';
@@ -554,6 +712,7 @@ else{
       document.getElementById('dashboard').style.display = 'none';
       document.getElementById('driver').style.display = 'none';
       document.getElementById('supportteam').style.display = 'none';
+      document.getElementById('vehicles').style.display = 'none';
       document.getElementById('tasks').style.display = 'none';
       document.getElementById('issue').style.display = 'none';
       document.getElementById('setting').style.display = 'none';
@@ -565,6 +724,7 @@ else{
       document.getElementById('dashboard').style.display = 'none';
       document.getElementById('driver').style.display = 'none';
       document.getElementById('supportteam').style.display = 'none';
+      document.getElementById('vehicles').style.display = 'none';
       document.getElementById('tasks').style.display = 'none';
       document.getElementById('setting').style.display = 'none';
     }
@@ -574,6 +734,7 @@ else{
       document.getElementById('dashboard').style.display = 'none';
       document.getElementById('driver').style.display = 'none';
       document.getElementById('supportteam').style.display = 'none';
+      document.getElementById('vehicles').style.display = 'none';
       document.getElementById('tasks').style.display = 'none';
       document.getElementById('issue').style.display = 'none';
       document.getElementById('notification').style.display = 'none';

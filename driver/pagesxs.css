@@ -1,47 +1,46 @@
-h2{
+h2 {
   font-size: 1.2rem;
 }
 
 /* ************************************************************ */
 /*----------------------- Dashboard Page ------------------------*/
-.dashboardCont{
-    display: flex;
-    height: 100vh;
+.dashboardCont {
+  display: flex;
+  height: 100vh;
 }
-.dashboardBox{
-    width: 90%;
-    height: 70%;
-    background-color: rgb(187, 187, 187);
+.dashboardBox {
+  width: 90%;
+  height: 70%;
+  /* background-color: rgb(187, 187, 187); */
 }
 
 /* ************************************************************ */
 /*----------------------- Task Page ------------------------*/
-.taskCont{
-    display: flex;
-    height: 100vh;
+.taskCont {
+  display: flex;
+  height: 100vh;
 }
-.taskBox{
-    width: 90%;
-    height: 70%;
-    background-color: rgb(197, 32, 32);
+.taskBox {
+  width: 90%;
+  height: 70%;
+  /* background-color: rgb(197, 32, 32); */
 }
-
 
 /* ************************************************************ */
 /*----------------------- Issue Page ------------------------*/
-.issueCont{
-    display: flex;
-    height: 100vh;
+.issueCont {
+  display: flex;
+  height: 100vh;
 }
-.issueBox{
-    width: 90%;
-    height: 70%;
-    /* background-color: rgb(27, 165, 245); */
+.issueBox {
+  width: 90%;
+  height: 70%;
+  /* background-color: rgb(27, 165, 245); */
 }
-.formBox{
-    height: 500px;
-    display: flex;
-    justify-content: center;
+.formBox {
+  height: 500px;
+  display: flex;
+  justify-content: center;
 }
 
 /* .container {
@@ -53,88 +52,85 @@ h2{
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   } */
-  
+
 .container .form {
-    margin-top: 30px;
-  }
-  
-  .form .input-box {
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  .input-box label {
-    color: black;
-  }
-  
-  .form .input-box input,
-  .form .input-box select {
-    position: relative;
-    height: 50px;
-    width: 100%;
-    outline: none;
-    font-size: 1rem;
-    color: #707070;
-    margin-top: 8px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 0 15px;
-  }
-  .form .input-box select{
-    cursor: pointer;
-  }
-  
-  .input-box input:focus,
-  .input-box select:focus {
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  .form .column {
-    display: flex;
-    column-gap: 15px;
-  }
-  
-  .form .btn {
-    height: 55px;
-    width: 100%;
-    color: #fff;
-    font-size: 1rem;
-    margin-top: 6px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 400;
-    background-color: #00a941;
-    transition: all 0.2s ease;
-  }
-  
-  .form .btn:hover {
-    background-color: #0cc652;
-  }
-  
-  #cutom-botton {
-    position: relative;
-    height: 50px;
-    width: 100%;
-    outline: none;
-    font-size: 1rem;
-    color: #707070;
-    margin-top: 8px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 0 15px;
-    cursor: pointer;
-  }
-  .uploadImg {
-    color: #fff;
-    cursor: pointer;
-  }
+  margin-top: 30px;
+}
 
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
 
+.input-box label {
+  color: black;
+}
 
+.form .input-box input,
+.form .input-box select {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+.form .input-box select {
+  cursor: pointer;
+}
 
+.input-box input:focus,
+.input-box select:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
 
-  /* Hide the original file input */
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.form .btn {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 6px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 400;
+  background-color: #00a941;
+  transition: all 0.3s ease;
+}
+
+.form .btn:hover {
+  background-color: #0cc652;
+  color: #fff;
+}
+
+#cutom-botton {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.uploadImg {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Hide the original file input */
 input[type="file"] {
   display: none;
 }
@@ -155,48 +151,61 @@ input[type="file"] {
 /* Change background color on hover */
 .custom-file-upload:hover {
   background-color: #45a049;
+  color: white;
 }
 
 /* ************************************************************ */
 /*----------------------- Notification Page ------------------------*/
-.notiCont{
-    display: flex;
-    height: 100vh;
+.notiCont {
+  display: flex;
+  height: 100vh;
 }
-.notiBox{
-    width: 90%;
-    height: 70%;
-    background-color: rgb(0, 70, 136);
+.notiBox {
+  width: 90%;
+  height: 70%;
+  /* background-color: rgb(0, 70, 136); */
 }
-
-
-
 
 /* ************************************************************ */
 /*----------------------- Setting Page ------------------------*/
-.settingCont{
-    display: flex;
-    height: 100vh;
+.settingCont {
+  display: flex;
+  height: 100vh;
 }
-.settingBox{
-    display: flex;
-    width: 90%;
-    height: 70%;
-    /* background-color: rgb(168, 0, 93); */
+.settingBox {
+  display: flex;
+  width: 90%;
+  height: 70%;
+  /* background-color: rgb(168, 0, 93); */
 }
-.settingBoxLeft{
-    flex: 1;
+.settingBoxLeft {
+  flex: 1;
 }
-.settingBoxRight{
-    flex: 3;
+.settingBoxRight {
+  flex: 3;
 }
-.settingBoxRight h3{
-    font-size: 1.5rem;
+.settingBoxRight h3 {
+  font-size: 1.5rem;
 }
-.settingBoxRight h4{
+.settingBoxRight h4 {
   font-size: 1.1rem;
 }
-.details{
-    display: inline;
-    font-weight: 500;
+.details {
+  display: inline;
+  font-weight: 500;
+}
+
+/*--------------- Animation ------------*/
+.settingBox {
+  position: relative;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }

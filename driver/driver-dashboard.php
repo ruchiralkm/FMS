@@ -192,17 +192,17 @@ if ($result->num_rows > 0) {
 <!----------------------------- Pages ----------------------->
 <!----------------------------- Dashboard ----------------------->
 <div class="dashboardCont" id = "dashboard">
-    <div class="dashboardBox">Dashboard Container</div>
+    <div class="dashboardBox"><h1>Dashboard</h1></div>
 </div>
 
 <!----------------------------- Task ----------------------->
 <div class="taskCont" id = "tasks">
-    <div class="taskBox">Task Container</div>
+    <div class="taskBox"><h1>Tasks</h1></div>
 </div>
 
 <!----------------------------- Issue ----------------------->
 <div class="issueCont" id = "issue">
-    <div class="issueBox">Issue Container
+    <div class="issueBox"><h4>Make an issue</h4>
       <!-- <div class="formBox">
         <form action="">
           <input type="text">
@@ -269,7 +269,7 @@ if ($result->num_rows > 0) {
 
 <!----------------------------- Notification ----------------------->
 <div class="notiCont" id = "notification">
-    <div class="notiBox">Notification Container</div>
+    <div class="notiBox"><h1>Notifications</h1></div>
 </div>
 
 

@@ -47,7 +47,7 @@ body {
 }
 
 .container .box-container .box img {
-  height: 150px;
+  height: 200px;
 }
 
 .container .box-container .box h3 {
@@ -79,6 +79,27 @@ body {
 .container .box-container .box:hover {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
   transform: scale(1.03);
+}
+
+/*--------- Animation ---------*/
+.box-container {
+  position: relative;
+  opacity: 0;
+  transform: translateY(40%);
+  animation: slideIn 1s forwards;
+}
+.logo {
+  position: relative;
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }
 
 @media (max-width: 768px) {

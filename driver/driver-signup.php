@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>FleetMS</title>
 
     <link rel="stylesheet" href="driversignup.css" />
   </head>
@@ -125,10 +125,10 @@
 
         <!-- expireance levels  -->
         <div class="input-box">
-          <label>Experience</label>
+          <label>Experience(Years)</label>
           <input
             type="text"
-            placeholder="Enter your expireance"
+            placeholder="Enter your expireance years"
             name="experience"
           />
           <br /><br /><br />

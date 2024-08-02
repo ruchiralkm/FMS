@@ -192,12 +192,12 @@ if ($result->num_rows > 0) {
 <!----------------------------- Pages ----------------------->
 <!----------------------------- Dashboard ----------------------->
 <div class="dashboardCont" id = "dashboard">
-    <div class="dashboardBox">Dashboard Container</div>
+    <div class="dashboardBox" style = "background-color:transparent;"><h1>Dashboard</h1></div>
 </div>
 
 <!----------------------------- Task ----------------------->
 <div class="taskCont" id = "tasks">
-    <div class="taskBox">Task Container</div>
+    <div class="taskBox" style = "background-color:transparent;"><h1>Tasks</h1></div>
 </div>
 
 <!----------------------------- Issue ----------------------->
@@ -234,8 +234,8 @@ if(mysqli_num_rows($result)>0){
         <div class="table_header">
             <p>Issues Informations</p>
             <div>
-                <input type="text" placeholder="Seach by driver name">
-                <button class="add_new">Search</button>
+                <input type="text" placeholder="Seach by driver name" class = "searchBoxx">
+                <button class="add_new" style = "background-color:black; color:white; font-weight:600; border-radius:8px; width:100px;">Search</button>
             </div>
         </div>
 
@@ -263,7 +263,7 @@ if(mysqli_num_rows($result)>0){
                         <td> <?php echo $row["dlno"];  ?> </td>
                         <td> <?php echo $row["issue"];  ?> </td>
                         <td> <?php echo $row["supportteam"];  ?> </td>
-                        <td> <?php  echo $row["issuepic"];  ?> </td>
+                        <td> <img src="../driver/<?php echo htmlspecialchars($row['issuepic']); ?>" style = "border-radius: 10%; height: 140px; width: 140px;"></td>
                     </tr>
 
                       <?php
@@ -287,7 +287,7 @@ if(mysqli_num_rows($result)>0){
 
 else{
   ?>
-  <h5 style = "margin-left:-600px;"><?php echo "No drivers at this movement"; ?></h5>
+  <h5 style = "margin-left:-600px;"><?php echo "No isuues at this movement"; ?></h5>
 
   <?php
 }
@@ -297,7 +297,7 @@ else{
 
 <!----------------------------- Notification ----------------------->
 <div class="notiCont" id = "notification">
-    <div class="notiBox">Notification Container</div>
+    <div class="notiBox" style = "background-color:transparent;"><h1>Notifications</h1></div>
 </div>
 
 
@@ -412,7 +412,7 @@ $conn->close();
       border-radius: 9px;
       cursor: pointer;"
       >
-      <a href="driver-login.php" style = "text-decoration: none; color: #fff;">
+      <a href="st-login.php" style = "text-decoration: none; color: #fff;">
         Login</a></button>
     </div>
 

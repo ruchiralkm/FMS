@@ -226,3 +226,18 @@ input:checked + .radio-tile ion-icon,
 input:checked + .radio-tile label {
   color: white;
 }
+
+/*-------------- Animation -------------*/
+.container {
+  position: relative;
+  opacity: 0;
+  transform: translateX(-70%);
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}

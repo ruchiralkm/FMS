@@ -11,7 +11,7 @@ h2 {
 .dashboardBox {
   width: 90%;
   height: 70%;
-  background-color: rgb(187, 187, 187);
+  /* background-color: rgb(187, 187, 187); */
 }
 
 /* ************************************************************ */
@@ -24,6 +24,21 @@ h2 {
   width: 96%;
   height: 70%;
   /* background-color: rgb(42, 114, 0); */
+}
+th,
+td,
+tr {
+  position: relative;
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }
 
 .table {
@@ -38,14 +53,21 @@ h2 {
 }
 .table_header p {
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 600;
+  color: white;
+}
+.searchBoxx {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
 }
 button {
   outline: none;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  padding: 10px;
+  padding: 5px;
 }
 .table_section {
   height: 500px;
@@ -113,6 +135,155 @@ tr:hover {
 }
 
 /* ************************************************************ */
+/*----------------------- Vehicles Page ------------------------*/
+.vehiclesCont {
+  display: flex;
+  height: 100vh;
+}
+.vehiclesBox1 {
+  width: 90%;
+  height: 20%;
+  /* background-color: rgb(243, 255, 135); */
+}
+.vehiclesBox2 {
+  width: 90%;
+  height: 70%;
+  /* background-color: rgb(23, 1, 37); */
+}
+
+.formBox {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+/* .container {
+    position: relative;
+    max-width: 700px;
+    width: 100px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  } */
+
+/* .container .form {
+  margin-top: 5px;
+} */
+
+.form .input-box {
+  width: 100%;
+  /* margin-top: 10px; */
+}
+
+.input-box label {
+  color: black;
+}
+
+.form .input-box input,
+.form .input-box select {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+.form .input-box select {
+  cursor: pointer;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.form .btn {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 400;
+  background-color: #00a941;
+  transition: all 0.3s ease;
+}
+
+.form .btn:hover {
+  background-color: #0cc652;
+  color: #fff;
+}
+
+#cutom-botton {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.uploadImg {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Hide the original file input */
+input[type="file"] {
+  display: none;
+}
+
+/* Style the custom label */
+.custom-file-upload {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 10px 40px;
+  cursor: pointer;
+  background-color: white;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Change background color on hover */
+.custom-file-upload:hover {
+  background-color: #45a049;
+  color: white;
+}
+
+/*--------- Animation ---------*/
+.vehiclesBox1 {
+  position: relative;
+  opacity: 0;
+  transform: translateX(40%);
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* ************************************************************ */
 /*----------------------- Task Page ------------------------*/
 .taskCont {
   display: flex;
@@ -121,7 +292,7 @@ tr:hover {
 .taskBox {
   width: 90%;
   height: 70%;
-  background-color: rgb(197, 32, 32);
+  /* background-color: rgb(197, 32, 32); */
 }
 
 /* ************************************************************ */
@@ -145,7 +316,7 @@ tr:hover {
 .notiBox {
   width: 90%;
   height: 70%;
-  background-color: rgb(0, 70, 136);
+  /* background-color: rgb(0, 70, 136); */
 }
 
 /* ************************************************************ */
@@ -158,7 +329,7 @@ tr:hover {
   display: flex;
   width: 90%;
   height: 70%;
-  background-color: rgb(168, 0, 93);
+  /* background-color: rgb(168, 0, 93); */
 }
 .settingBoxLeft {
   flex: 1;
